@@ -1,0 +1,22 @@
+// ==UserScript==
+// @name         修改 User-Agent 为安卓
+// @namespace    http://tampermonkey.net/
+// @version      0.1
+// @description  修改浏览器 User-Agent 为安卓版本
+// @author       Your name
+// @match        *://*/*
+// @grant        none
+// ==/UserScript==
+
+(function() {
+    'use strict';
+    
+    const androidUserAgent = 'Mozilla/5.0 (Linux; Android 11; Pixel 4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.210 Mobile Safari/537.36';
+    
+    Object.defineProperty(navigator, 'userAgent', {
+        value: androidUserAgent,
+        writable: false,
+        configurable: false,
+        enumerable: true
+    });
+})();
